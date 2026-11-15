@@ -153,7 +153,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 #splash{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;background:radial-gradient(ellipse at 50% 35%,#24140a 0%,#0b0b0c 65%);transition:opacity .5s}
 #splash.hide{opacity:0;pointer-events:none}
-.splash-logo{width:120px;height:120px}
+.splash-logo{width:150px;height:150px}
 .splash-name{font-family:var(--disp);font-size:56px;letter-spacing:6px;margin-top:10px;line-height:1}
 .splash-sub{font-family:var(--cond);font-weight:600;letter-spacing:8px;color:var(--orange);font-size:16px}
 .quote{font-family:var(--cond);font-weight:600;font-size:30px;line-height:1.2;max-width:380px;margin-top:48px;position:relative;padding-top:28px}
@@ -208,7 +208,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <div class="overlay" id="ride">
   <div class="ride-top">
-    <div class="brand"><svg width="40" height="40" viewBox="0 0 120 120" class="mini-logo"></svg><div class="brand-txt"><div class="brand-name" style="font-size:22px">FAHRMODUS</div></div></div>
+    <div class="brand"><svg width="48" height="48" viewBox="0 0 120 120" class="mini-logo"></svg><div class="brand-txt"><div class="brand-name" style="font-size:22px">FAHRMODUS</div></div></div>
     <button class="ride-close" id="rideClose">ZURÜCK</button>
   </div>
   <div class="ride-clock" id="rideClock">--:--</div>
@@ -251,7 +251,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 <div class="app">
   <header class="top">
     <div class="brand">
-      <svg width="46" height="46" viewBox="0 0 120 120" class="mini-logo"></svg>
+      <svg width="54" height="54" viewBox="0 0 120 120" class="mini-logo"></svg>
       <div class="brand-txt"><div class="brand-name">KRAFTPILOT</div><div class="brand-sub">FAHRWETTER</div></div>
     </div>
     <div class="top-right">
@@ -325,7 +325,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="foot">
     Wetterdaten: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)<br>
     Ortsnamen: Open-Meteo Geocoding · BigDataCloud<br>
-    Design by <b>KRAFTPILOT Design</b> · v1.4
+    Design by <b>KRAFTPILOT Design</b> · v1.5
   </div>
 </div>
 
@@ -394,11 +394,20 @@ const keyDay = d => keyHour(d).slice(0,10);
 
 /* ================= Logo ================= */
 function logoSVG(){
-  const cyl=(rot,fill)=>`<g transform="rotate(${rot} 60 78)"><rect x="47" y="24" width="26" height="54" rx="6" fill="${fill}"/><g stroke="#0b0b0c" stroke-width="3">${[32,40,48,56].map(y=>`<line x1="47" y1="${y}" x2="73" y2="${y}"/>`).join("")}</g></g>`;
+  // V2-Motor im 45°-Winkel: zwei verrippte Zylinder auf rundem Kurbelgehäuse
+  const cyl=(rot,fill)=>{
+    let fins=""; for(let i=0;i<5;i++){ fins+=`<rect x="41" y="${31+i*8}" width="38" height="5" rx="2" fill="${fill}"/>`; }
+    return `<g transform="rotate(${rot} 60 86)">
+      <rect x="49" y="30" width="22" height="50" fill="${fill}"/>
+      ${fins}
+      <rect x="44" y="18" width="32" height="12" rx="4" fill="${fill}"/>
+    </g>`;
+  };
   return `<circle cx="60" cy="60" r="56" fill="#0b0b0c" stroke="#ff6a13" stroke-width="5"/>
-  <circle cx="60" cy="60" r="47" fill="none" stroke="#f4f1ea" stroke-width="1.5" opacity=".35"/>
-  ${cyl(-24,"#ff6a13")}${cyl(24,"#f4f1ea")}
-  <rect x="38" y="76" width="44" height="18" rx="5" fill="#2a2a30" stroke="#ff6a13" stroke-width="2"/>`;
+  ${cyl(-22.5,"#ff6a13")}${cyl(22.5,"#f4f1ea")}
+  <circle cx="60" cy="86" r="17" fill="#2a2a30" stroke="#0b0b0c" stroke-width="3"/>
+  <circle cx="60" cy="86" r="17" fill="none" stroke="#ff6a13" stroke-width="2.5"/>
+  <circle cx="60" cy="86" r="5" fill="#ff6a13"/>`;
 }
 
 /* ================= Wetter-Symbole ================= */
@@ -879,7 +888,7 @@ load().then(res=>{
   hideSplash();
 });
 
-if("serviceWorker" in navigator && location.protocol==="https:"){
+if("serviceWorker" in navigator && (location.protocol==="https:"||location.hostname==="localhost")){
   window.addEventListener("load",()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); });
 }
 </script>
