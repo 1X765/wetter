@@ -193,6 +193,63 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .seg .btn small{font-size:14px;color:var(--muted);font-weight:600}
 .seg .btn.on{background:#2a170a;border-color:var(--orange);color:var(--orange)}
 .msg{font-family:var(--cond);font-weight:600;font-size:17px;color:var(--yellow);margin-top:8px;min-height:20px}
+
+/* ---------- Flexibel für kleine Displays & große Schrift ---------- */
+html,body{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.app{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+.card{padding:clamp(12px,4vw,18px)}
+.hours{margin-left:calc(-1*clamp(12px,4vw,18px));margin-right:calc(-1*clamp(12px,4vw,18px));padding-left:clamp(12px,4vw,18px);padding-right:clamp(12px,4vw,18px)}
+.brand{gap:8px}
+.brand .mini-logo{width:clamp(40px,13vw,54px);height:clamp(40px,13vw,54px);flex:none}
+.brand-name{font-size:clamp(22px,7.5vw,30px)}
+.brand-sub{font-size:clamp(10px,3.2vw,13px);letter-spacing:clamp(2px,1vw,4px)}
+.iconbtn{width:clamp(40px,11vw,48px);height:clamp(40px,11vw,48px)}
+.top-right{gap:6px;flex:none}
+.clock{font-size:clamp(48px,17vw,66px)}
+.date{font-size:clamp(13px,4vw,16px)}
+.spruch{padding:20px clamp(12px,4vw,22px) 14px}
+.spruch-t{font-size:clamp(16px,5vw,20px)}
+.hero{grid-template-columns:minmax(0,auto) minmax(0,1fr)}
+.hero .ic{width:clamp(90px,34vw,150px);height:clamp(90px,34vw,150px)}
+.temp{font-size:clamp(56px,24vw,118px)}
+.temp sup{font-size:.45em;top:.08em}
+.desc{flex-wrap:wrap;row-gap:6px}
+.desc-main{font-size:clamp(18px,6vw,26px)}
+.feel b{font-size:clamp(28px,9vw,38px)}
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact-v{font-size:clamp(16px,5vw,21px);overflow-wrap:anywhere}
+.today-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(6px,2vw,10px)}
+.stat{padding:10px 4px;min-width:0}
+.stat-v{font-size:clamp(20px,7.5vw,34px);white-space:nowrap}
+.stat-k{font-size:clamp(10px,3vw,13px);overflow-wrap:anywhere}
+.radar{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(5px,2vw,8px)}
+.cell .ic{width:clamp(32px,10vw,42px);height:clamp(32px,10vw,42px)}
+.cell-t{font-size:clamp(20px,6vw,26px)}
+.card-title{flex-wrap:wrap;gap:6px}
+.radar-note{font-size:clamp(15px,4.6vw,18px)}
+.tab{font-size:clamp(18px,6vw,24px)}
+.day{grid-template-columns:clamp(54px,17vw,78px) clamp(38px,11vw,52px) minmax(0,1fr) auto;gap:clamp(6px,2vw,10px)}
+.day .ic{width:clamp(38px,11vw,52px);height:clamp(38px,11vw,52px)}
+.day-n{font-size:clamp(19px,6vw,26px)}
+.day-mid b{font-size:clamp(21px,6.5vw,28px)}
+.day-mid .lo{font-size:clamp(17px,5vw,22px)}
+.day-mid{font-size:clamp(12px,3.6vw,15px)}
+.pill{min-width:clamp(44px,13vw,56px);font-size:clamp(19px,6vw,24px)}
+.verdict-sub{font-size:clamp(14px,4.4vw,17px)}
+.ride-verdict span{font-size:clamp(17px,5.5vw,24px)}
+.ride-next{font-size:clamp(20px,6.5vw,28px)}
+.ride-feel{font-size:clamp(19px,6vw,26px)}
+.sheet h2{font-size:clamp(26px,8.5vw,34px)}
+.splash-logo{width:clamp(90px,30vw,150px);height:clamp(90px,30vw,150px)}
+.splash-name{font-size:clamp(34px,12vw,56px);letter-spacing:clamp(3px,1.5vw,6px)}
+.splash-sub{font-size:clamp(12px,3.8vw,16px);letter-spacing:clamp(4px,2vw,8px)}
+.quote{font-size:clamp(19px,6.2vw,30px);margin-top:clamp(24px,7vh,48px);max-width:92%}
+#splash{padding:24px clamp(16px,6vw,32px)}
+.brand{flex:1;min-width:0}
+.brand-txt{min-width:0;overflow:hidden}
+.brand-name{font-size:clamp(18px,6.2vw,30px);letter-spacing:clamp(1px,.5vw,2px)}
+.top-right .iconbtn{width:clamp(38px,10.5vw,48px);height:clamp(38px,10.5vw,48px)}
+.spruch-t small{letter-spacing:clamp(1px,.6vw,2.5px)}
 </style>
 </head>
 <body>
@@ -325,7 +382,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="foot">
     Wetterdaten: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)<br>
     Ortsnamen: Open-Meteo Geocoding · BigDataCloud<br>
-    Design by <b>KRAFTPILOT Design</b> · v1.5
+    Design by <b>KRAFTPILOT Design</b> · v1.6
   </div>
 </div>
 
@@ -745,7 +802,7 @@ function renderDays(){
   let html="";
   for(let k=t0+1;k<=t0+n&&k<D.time.length;k++){
     const s=dayScore(H,D.time[k]), v=verdictOf(s), dt=new Date(D.time[k]+"T12:00:00Z");
-    html+=`<div class="day"><div class="day-n" ${k===t0+1?'style="font-size:22px"':""}>${k===t0+1?"MORGEN":dayName(D.time[k])}<small>${dt.getUTCDate()}.${dt.getUTCMonth()+1}.</small></div>
+    html+=`<div class="day"><div class="day-n" ${k===t0+1?'style="font-size:.85em"':""}>${k===t0+1?"MORGEN":dayName(D.time[k])}<small>${dt.getUTCDate()}.${dt.getUTCMonth()+1}.</small></div>
       <div class="ic">${wxIcon(D.weather_code[k],1)}</div>
       <div class="day-mid"><b>${deg(D.temperature_2m_max[k])}</b> <span class="lo">/ ${deg(D.temperature_2m_min[k])}</span><br>
         <span style="color:#ffc400">☀</span> ${dec((D.sunshine_duration[k]||0)/3600)} h &nbsp; <span style="color:#3fa9f5">●</span> ${D.precipitation_probability_max[k]??0}%</div>
@@ -871,7 +928,7 @@ document.querySelectorAll(".mini-logo").forEach(s=>s.innerHTML=logoSVG());
 $("splashLogo").innerHTML=logoSVG();
 let qi=Math.floor(Math.random()*SPRUECHE.length);
 function showSpruch(anim){
-  const el=$("spruchTxt"); el.innerHTML=`„${SPRUECHE[qi]}“<small>Biker-Weisheit · Tippen für die nächste</small>`;
+  const el=$("spruchTxt"); el.innerHTML=`„${SPRUECHE[qi]}“<small>Biker-Weisheit · Tippen = nächster</small>`;
   if(anim){ el.classList.remove("fade"); void el.offsetWidth; el.classList.add("fade"); }
 }
 $("quote").textContent=SPRUECHE[qi]; showSpruch(false);
@@ -881,7 +938,7 @@ tick(); setInterval(()=>{ tick(); if(state.data && new Date().getSeconds()<15) r
 let ready=false, minTime=false, startMsg="";
 const hideSplash=()=>{ if(!ready||!minTime) return; $("splash").classList.add("hide"); setTimeout(()=>$("splash").classList.remove("show"),500); if(startMsg) openSettings(startMsg); startMsg=""; };
 $("splash").onclick=()=>{minTime=true;hideSplash();};
-setTimeout(()=>{minTime=true;hideSplash();},5000);
+setTimeout(()=>{minTime=true;hideSplash();},6500);
 load().then(res=>{
   render(); ready=true; $("loadbar").style.visibility="hidden";
   if(res==="noloc"||res==="offline-noloc") startMsg="Standort nicht freigegeben – Ort eingeben oder GPS erlauben.";
