@@ -255,6 +255,15 @@ html,body{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .app{padding-bottom:calc(32px + env(safe-area-inset-bottom))}
 .gauge{max-width:300px}
 .verdict{margin-top:4px}
+.splash-go{margin-top:clamp(28px,6vh,44px);display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 30px;border-radius:28px;background:var(--orange);color:#0b0b0c;font-family:var(--disp);font-size:clamp(22px,7vw,28px);letter-spacing:4px;box-shadow:0 6px 24px rgba(255,106,19,.35)}
+.splash-go svg{width:24px;height:24px}
+.splash-go.wait{background:#2a2a30;color:var(--muted);box-shadow:none}
+.splash-go.wait svg{display:none}
+.splash-go.ready{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.loading-bar{margin-top:18px}
+#splash{overflow-y:auto;justify-content:safe center}
+.spruch-t small{color:#8a8a92}
 </style>
 </head>
 <body>
@@ -264,8 +273,11 @@ html,body{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="splash-name">KRAFTPILOT</div>
   <div class="splash-sub">FAHRWETTER</div>
   <div class="quote" id="quote"></div>
+  <button class="splash-go wait" id="splashGo" aria-label="App starten">
+    <span id="splashGoTxt">LÄDT …</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
   <div class="loading-bar" id="loadbar"><i></i></div>
-  <div class="splash-hint">Tippen zum Starten</div>
 </div>
 
 <div class="overlay" id="ride">
@@ -391,7 +403,7 @@ html,body{overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="foot">
     Wetterdaten: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)<br>
     Ortsnamen: Open-Meteo Geocoding · BigDataCloud<br>
-    Design by <b>KRAFTPILOT Design</b> · v1.7
+    Design by <b>KRAFTPILOT Design</b> · v1.8
   </div>
 </div>
 
@@ -945,7 +957,7 @@ const hideSplash=()=>{ if(!ready||!minTime) return; $("splash").classList.add("h
 $("splash").onclick=()=>{minTime=true;hideSplash();};
 
 load().then(res=>{
-  render(); ready=true; $("loadbar").style.visibility="hidden";
+  render(); ready=true; $("loadbar").style.visibility="hidden"; $("splashGo").classList.remove("wait"); $("splashGo").classList.add("ready"); $("splashGoTxt").textContent="LOS GEHT'S";
   if(res==="noloc"||res==="offline-noloc") startMsg="Standort nicht freigegeben – Ort eingeben oder GPS erlauben.";
   hideSplash();
 });

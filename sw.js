@@ -1,5 +1,5 @@
 /* KRAFTPILOT Fahrwetter – Service Worker: App installierbar + läuft auch ohne Netz */
-const VERSION = "kp-v1.7";
+const VERSION = "kp-v1.8";
 const SHELL = [
   "./", "./index.html", "./manifest.webmanifest",
   "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png"

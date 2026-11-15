@@ -1,4 +1,4 @@
-# KRAFTPILOT Fahrwetter – v1.7
+# KRAFTPILOT Fahrwetter – v1.8
 
 Wetter-App für Motorradfahrer, weltweit nutzbar.
 Läuft auf Android als App auf dem Startbildschirm (eine Web-App, die man installieren kann).
@@ -27,8 +27,8 @@ Die App braucht eine **https-Adresse**, damit Android sie installieren kann und 
 **Variante B – GitHub Pages**
 Ordnerinhalt in ein GitHub-Repository hochladen → Settings → Pages → Branch „main“ wählen.
 
-**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v1.7"`
-hochzählen (z. B. `kp-v1.8`), dann holt sich jedes Handy die neue Version automatisch.
+**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v1.8"`
+hochzählen (z. B. `kp-v1.9`), dann holt sich jedes Handy die neue Version automatisch.
 
 ## 2. Auf dem Android-Handy installieren (für dich und die Clique)
 
@@ -40,7 +40,7 @@ Die Adresse einfach per WhatsApp an die Clique schicken, fertig.
 
 ## 3. Bedienung
 
-- **Start:** Logo + zufälliger Biker-Spruch. Bleibt stehen, bis man darauf tippt.
+- **Start:** Logo + zufälliger Biker-Spruch. Bleibt stehen, bis man auf „LOS GEHT'S“ tippt.
 - **Ort:** Zahnrad oder Ortsname antippen → GPS oder Ort weltweit suchen. Die letzten 6 Orte werden gemerkt.
   Ein gesuchter Ort bleibt fest eingestellt. „Meinen Standort nutzen“ schaltet zurück auf GPS.
 - **Ortszeit:** Liegt der Ort in einer anderen Zeitzone, steht die Ortszeit in Orange unter dem Datum.
