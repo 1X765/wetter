@@ -1,8 +1,8 @@
 /* KRAFTPILOT Fahrwetter – Service Worker: App installierbar + läuft auch ohne Netz */
-const VERSION = "kp-v2.2";
+const VERSION = "kp-v2.3";
 const SHELL = [
-  "./", "./index.html", "./manifest.webmanifest",
-  "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png"
+  "./", "./index.html", "./manifest.webmanifest", "./manifest.webmanifest?v=23",
+  "./icons/icon-192-v23.png", "./icons/icon-512-v23.png", "./icons/icon-maskable-512-v23.png"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

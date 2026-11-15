@@ -1,4 +1,4 @@
-# KRAFTPILOT Fahrwetter – v2.2
+# KRAFTPILOT Fahrwetter – v2.3
 
 Wetter-App für Motorradfahrer, weltweit nutzbar.
 Läuft auf Android als App auf dem Startbildschirm (eine Web-App, die man installieren kann).
@@ -10,7 +10,7 @@ Läuft auf Android als App auf dem Startbildschirm (eine Web-App, die man instal
 | `index.html` | Die komplette App |
 | `manifest.webmanifest` | Macht die App auf Android installierbar (Name, Icon, Farben) |
 | `sw.js` | Hält die App offline verfügbar und lädt sie schnell |
-| `icons/` | App-Icons (192 px, 512 px, „maskable“ für runde Android-Icons) |
+| `icons/` | App-Icons (192 px, 512 px, „maskable“ für runde Android-Icons). Bei neuem Logo neue Dateinamen vergeben, sonst behält Android das alte Icon. |
 | `SCHRIFTEN-LIZENZ-OFL.txt` | Lizenz der eingebauten Schriften (Bebas Neue, Barlow), die ohne Google-Server geladen werden |
 
 ## 1. Online stellen (einmalig, kostenlos)
@@ -27,8 +27,8 @@ Die App braucht eine **https-Adresse**, damit Android sie installieren kann und 
 **Variante B – GitHub Pages**
 Ordnerinhalt in ein GitHub-Repository hochladen → Settings → Pages → Branch „main“ wählen.
 
-**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v2.2"`
-hochzählen (z. B. `kp-v2.3`), dann holt sich jedes Handy die neue Version automatisch.
+**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v2.3"`
+hochzählen (z. B. `kp-v2.4`), dann holt sich jedes Handy die neue Version automatisch.
 
 ## 2. Auf dem Android-Handy installieren (für dich und die Clique)
 
