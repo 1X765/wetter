@@ -1,4 +1,4 @@
-# KRAFTPILOT Fahrwetter – v1.8
+# KRAFTPILOT Fahrwetter – v2.0
 
 Wetter-App für Motorradfahrer, weltweit nutzbar.
 Läuft auf Android als App auf dem Startbildschirm (eine Web-App, die man installieren kann).
@@ -27,8 +27,8 @@ Die App braucht eine **https-Adresse**, damit Android sie installieren kann und 
 **Variante B – GitHub Pages**
 Ordnerinhalt in ein GitHub-Repository hochladen → Settings → Pages → Branch „main“ wählen.
 
-**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v1.8"`
-hochzählen (z. B. `kp-v1.9`), dann holt sich jedes Handy die neue Version automatisch.
+**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v2.0"`
+hochzählen (z. B. `kp-v2.1`), dann holt sich jedes Handy die neue Version automatisch.
 
 ## 2. Auf dem Android-Handy installieren (für dich und die Clique)
 
@@ -40,15 +40,19 @@ Die Adresse einfach per WhatsApp an die Clique schicken, fertig.
 
 ## 3. Bedienung
 
-- **Start:** Logo + zufälliger Biker-Spruch. Bleibt stehen, bis man auf „LOS GEHT'S“ tippt.
-- **Ort:** Zahnrad oder Ortsname antippen → GPS oder Ort weltweit suchen. Die letzten 6 Orte werden gemerkt.
-  Ein gesuchter Ort bleibt fest eingestellt. „Meinen Standort nutzen“ schaltet zurück auf GPS.
-- **Ortszeit:** Liegt der Ort in einer anderen Zeitzone, steht die Ortszeit in Orange unter dem Datum.
-- **↻:** Aktualisieren. Die App aktualisiert sich auch selbst (alle 15 Min. und beim Öffnen).
-- **Ohne Netz:** Die letzten Daten werden mit dem Hinweis „OFFLINE · Stand …“ angezeigt.
-- **FAHRMODUS** (Knopf unter der Uhrzeit): Riesige Anzeige für die Halterung. Das Display bleibt an.
-- **Tour-Radar:** Wetter in 8 Richtungen rund um den Ort. Umschalten zwischen **50 km** (Feierabendrunde) und **100 km** (Tagestour), direkt in der Karte oder in den Einstellungen.
-- **Tempo:** Landstraße (90) oder Autobahn (130) für die gefühlte Fahrtwind-Temperatur.
+- **Start:** Logo und Biker-Spruch. Tippen auf **„LOS GEHT'S“** öffnet die App.
+- **Navigation oben:** Vier Reiter **JETZT · HEUTE · TOUR · WOCHE**. Man kann auch nach links/rechts wischen.
+  Die **Zurück-Taste** des Handys führt zur vorherigen Ansicht.
+- **☰ Menü oben rechts:** Alle Ansichten plus **Fahrmodus**, **Ort & Einstellungen** und **Aktualisieren**.
+- **JETZT:** Ort, aktuelles Wetter, gefühlte Temperatur bei Fahrtwind, **Fahr-Tacho** (0 = Garage, 100 = Kurventag),
+  bestes Fahrfenster, Kluft-Tipp und der Knopf **Fahrmodus**. „Ort ändern“ öffnet die weltweite Ortssuche.
+- **HEUTE:** Sonne, Regen, Max/Min, Sonnenauf- und -untergang, Wind und Stunde für Stunde (seitlich wischen).
+- **TOUR (Tour-Radar):** Wohin lohnt sich die Fahrt? Oben die **beste Richtung** mit Pfeil, darunter alle Richtungen
+  sortiert von gut nach schlecht. Umschalten zwischen **Feierabend (ca. 50 km)** und **Tagestour (bis 100 km)**.
+- **WOCHE:** Vorschau für **3 oder 7 Tage** mit Bewertung pro Tag.
+- **Fahrmodus:** Riesige Anzeige für die Handyhalterung (Uhr, Temperatur, Regen-Hinweis, Urteil). Das Display bleibt an.
+- **Spruch:** Auf jeder Ansicht. Antippen zeigt den nächsten.
+- **Ohne Netz:** Die letzten Daten werden mit dem Hinweis „OFFLINE“ angezeigt.
 
 ## 4. Fahr-Tacho: so wird bewertet (0–100)
 
