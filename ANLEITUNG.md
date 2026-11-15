@@ -1,4 +1,4 @@
-# KRAFTPILOT Fahrwetter – v2.0
+# KRAFTPILOT Fahrwetter – v2.2
 
 Wetter-App für Motorradfahrer, weltweit nutzbar.
 Läuft auf Android als App auf dem Startbildschirm (eine Web-App, die man installieren kann).
@@ -27,8 +27,8 @@ Die App braucht eine **https-Adresse**, damit Android sie installieren kann und 
 **Variante B – GitHub Pages**
 Ordnerinhalt in ein GitHub-Repository hochladen → Settings → Pages → Branch „main“ wählen.
 
-**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v2.0"`
-hochzählen (z. B. `kp-v2.1`), dann holt sich jedes Handy die neue Version automatisch.
+**Update später:** Dateien ersetzen und neu hochladen. In `sw.js` die Zeile `const VERSION = "kp-v2.2"`
+hochzählen (z. B. `kp-v2.3`), dann holt sich jedes Handy die neue Version automatisch.
 
 ## 2. Auf dem Android-Handy installieren (für dich und die Clique)
 
@@ -50,7 +50,7 @@ Die Adresse einfach per WhatsApp an die Clique schicken, fertig.
 - **TOUR (Tour-Radar):** Wohin lohnt sich die Fahrt? Oben die **beste Richtung** mit Pfeil, darunter alle Richtungen
   sortiert von gut nach schlecht. Umschalten zwischen **Feierabend (ca. 50 km)** und **Tagestour (bis 100 km)**.
 - **WOCHE:** Vorschau für **3 oder 7 Tage** mit Bewertung pro Tag.
-- **Fahrmodus:** Riesige Anzeige für die Handyhalterung (Uhr, Temperatur, Regen-Hinweis, Urteil). Das Display bleibt an.
+- **Fahrmodus:** Riesige Anzeige für die Handyhalterung: Datum, Uhrzeit, Temperatur, gefühlte Temperatur, Regen-Hinweis. Das Display bleibt an.
 - **Spruch:** Auf jeder Ansicht. Antippen zeigt den nächsten.
 - **Ohne Netz:** Die letzten Daten werden mit dem Hinweis „OFFLINE“ angezeigt.
 
